@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^RequestCompletionHandler)(NSString*, NSError*);
+
 @interface SendRequest : NSObject
+
++ (void)requestPath:(NSString *)path
+      onCompletion:(RequestCompletionHandler)complete;
 
 @end
